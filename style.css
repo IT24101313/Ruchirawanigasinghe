@@ -1,12 +1,13 @@
-body{
+body {
     background: rgb(29,40,41);
     background: -moz-linear-gradient(90deg, rgba(29,40,41,1) 0%, rgba(24,30,31,1) 11%, rgba(19,19,20,1) 41%, rgba(19,19,20,1) 58%, rgba(24,30,31,1) 85%, rgba(29,40,41,1) 100%);
     background: -webkit-linear-gradient(90deg, rgba(29,40,41,1) 0%, rgba(24,30,31,1) 11%, rgba(19,19,20,1) 41%, rgba(19,19,20,1) 58%, rgba(24,30,31,1) 85%, rgba(29,40,41,1) 100%);
     background: linear-gradient(90deg, rgba(29,40,41,1) 0%, rgba(24,30,31,1) 11%, rgba(19,19,20,1) 41%, rgba(19,19,20,1) 58%, rgba(24,30,31,1) 85%, rgba(29,40,41,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1d2829",endColorstr="#1d2829",GradientType=1);
     color: white;
-    padding:3rem;
+    padding: 1.5rem;
     position: relative;
+    overflow-x: hidden;
 }
 
 * {
@@ -20,18 +21,19 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom:2rem;
+    padding-bottom: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 300;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .contact-btn {
-    padding: 0.5rem 2rem;
-    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
     background-color: rgba(143, 143, 143, 0.2);
     border: 1px solid rgba(102, 102, 102, 0.5);
     border-radius: 50px;
@@ -44,7 +46,6 @@ header {
     background-color: #76b0ab37;
 }
 
-
 /* MAIN SECTION */
 main {
     position: relative;
@@ -53,29 +54,30 @@ main {
     flex: 1;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 85.7vh;
+    min-height: 80vh;
 }
 
 .title-section {
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 main h1 {
     text-align: center;
-    font-size: 9rem;
+    font-size: 4.5rem;
     font-weight: 900;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     line-height: 1;
     background-image: linear-gradient(rgb(133, 133, 133), rgb(255, 255, 255));
     color: transparent;
     background-clip: text;
+    display: block;
 }
 
 main h2 {
     text-align: center;
-    font-size: 7.5rem;
+    font-size: 3.5rem;
     font-weight: 700;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     line-height: 1;
     background-image: linear-gradient(rgb(133, 133, 133), rgb(255, 255, 255));
     color: transparent;
@@ -83,36 +85,22 @@ main h2 {
     display: none;
 }
 
-.location {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.location p {
-    background-image: linear-gradient(to right, #76b0ab, #ffffff, #842626);
-    color: transparent;
-    background-clip: text;
-    font-size: 1.5rem;
-}
-
 .bio-section {
     margin-top: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .bio {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    line-height: 1.5;
     font-weight: 300;
-    letter-spacing: 1px;
-    max-width: 22rem;
+    letter-spacing: 0.5px;
+    max-width: 100%;
 }
 
 .scroll-down {
-    height: 5rem;
-    width: 2rem;
+    height: 4rem;
+    width: 1.5rem;
     position: absolute;
     right: 2%;
     bottom: 5%;
@@ -127,10 +115,10 @@ main h2 {
     position: absolute;
     top: 20%;
     left: 50%;
-    height: 10px;
-    width: 10px;
+    height: 8px;
+    width: 8px;
     transform: translate(-50%, -100%) rotate(45deg);
-    border: 2px solid lightgray;
+    border: 1px solid lightgray;
     border-top: transparent;
     border-left: transparent;
     animation: scroll-down 3s ease-in-out infinite;
@@ -152,9 +140,7 @@ main h2 {
         opacity: 0;
         top: 90%;
     }
-
 }
-
 
 /* 3D planet */
 .planet-3D {
@@ -163,15 +149,13 @@ main h2 {
     right: -20%;
     width: 130%;
     height: 130%;
+    z-index: -1;
 }
-
-
 
 /* ABOUT SECTION */
 .about-section {
-    height: 95vh;
     width: 100%;
-    margin-top: 20rem;
+    margin-top: 10rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -179,32 +163,32 @@ main h2 {
 }
 
 .about-title {
-    margin-bottom: 5%;
-    font-size: 5rem;
+    margin-bottom: 3rem;
+    font-size: 3rem;
     background-image: linear-gradient(rgb(133, 133, 133), rgb(255, 255, 255));
     color: transparent;
     background-clip: text;
+    text-align: center;
 }
-
 
 .bento-grid {
     position: relative;
     display: grid;
-    height: 90vh;
-    width: 90%;
-    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    grid-template-columns: 1fr;
     grid-template-areas: 
-        "intro intro tech"
-        "time passion tech"
-    ;
+        "intro"
+        "tech"
+        "time"
+        "passion";
     gap: 1.5rem;
 }
 
 .card {
     background: linear-gradient(145deg, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.07));
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 24PX;
-    padding: 2rem;
+    border-radius: 24px;
+    padding: 1.5rem;
     transition: transform 0.3s ease,
                 border-color 0.3s ease,
                 box-shadow 0.3s ease;
@@ -213,11 +197,10 @@ main h2 {
 }
 
 /* CARD SPECIFIC AREAS */
-    .intro { grid-area: intro; min-height: 300px;}
-    .tech {grid-area: tech; min-height: 450px;}
-    .time { grid-area: time; min-height: 220px;}
-    .passion { grid-area: passion; min-height: 220px;}
-
+.intro { grid-area: intro; }
+.tech { grid-area: tech; }
+.time { grid-area: time; }
+.passion { grid-area: passion; }
 
 /* HOVER EFFECTS */
 .card:hover {
@@ -230,7 +213,7 @@ main h2 {
 .card::before {
     content: '';
     position: absolute;
-    inset: 0 0 0 0;
+    inset: 0;
     background: radial-gradient(circle at var(--x) var(--y),
                 rgba(124, 233, 230, 0.1),
                 transparent 40%
@@ -245,53 +228,49 @@ main h2 {
 }
 
 .card-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 300;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     color: #ffffff;
 }
 
 .card-text {
     color: #7b7b7b;
-    line-height: 1.6;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    max-width: 30rem;
+    line-height: 1.5;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
 }
 
 .bento-grid .background-img {
     position: absolute;
-    inset: -1% -1% -1% -1%;
-    width: 110%;
-    height: 110%;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: -1;
 }
 
 .model-box {
-    position: absolute;
-    right: 15%;
-    top: -85%;
-    width: 50rem;
-    height: 50rem;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-top: 1rem;
 }
 
 .info-3D {
-    width: 150%;
-    height: 150%;
+    width: 100%;
+    height: 100%;
     mix-blend-mode: lighten;
 }
   
 .bento-grid .skills-group {
-    position: absolute;
-    bottom: 5%;
-    left: 15%;
-    width: 70%;
+    position: relative;
+    width: 100%;
+    margin-top: 1rem;
 }
 
 .bento-grid .btn {
-    position: absolute;
-    bottom: 10%;
     padding: 0.75rem 1.5rem;
     background-color: rgba(124, 233, 230, 0.1);
     color: #76b0ab;
@@ -299,6 +278,8 @@ main h2 {
     border-radius: 50px;
     cursor: pointer;
     transition: 0.3s ease;
+    display: block;
+    margin-top: 1rem;
 }
 
 .bento-grid .btn:hover {
@@ -306,12 +287,10 @@ main h2 {
     color: black;
 }
 
-
 /* PROJECTS SECTION */
-
 .projects-section {
     width: 100%;
-    margin-top: 20rem;
+    margin-top: 10rem;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -320,15 +299,16 @@ main h2 {
 }
 
 .projects-section h3 {
-    margin-bottom: 5%;
-    font-size: 5rem;
+    margin-bottom: 3rem;
+    font-size: 3rem;
     background-image: linear-gradient(rgb(133, 133, 133), rgb(255, 255, 255));
     color: transparent;
     background-clip: text;
+    text-align: center;
 }
 
 .slider {
-    height: var(--height);
+    height: 300px;
     width: 100%;
     overflow: hidden;
     mask-image: linear-gradient(
@@ -341,24 +321,26 @@ main h2 {
 
 .slider .list {
     display: flex;
-    min-width: calc(var(--width) * var(--quantity));
+    min-width: calc(300px * 4);
     position: relative;
 }
 
 .slider .list .item {
-    width: var(--width);
-    height: var(--height);
+    width: 300px;
+    height: 200px;
     position: absolute;
     left: 80%;
     animation: autoRun 10s linear infinite;
     transition: filter 0.5s;
-    animation-delay: calc( (10s / var(--quantity)) * (var(--position) - 1) - 10s)!important;
+    animation-delay: calc( (10s / 4) * (var(--position) - 1) - 10s)!important;
     transition: 0.5s;
 }
 
 .slider .list .item video {
-    margin-top: 4rem;
+    margin-top: 2rem;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 1rem;
 }
 
@@ -367,7 +349,7 @@ main h2 {
         left: 100%;
     }
     to {
-        left: calc(var(--width) * -1);
+        left: -300px;
     }
 }
 
@@ -378,24 +360,23 @@ main h2 {
 
 .slider .item:hover {
     filter: grayscale(0);
-    scale: 1.2;
+    transform: scale(1.1);
 }
-
 
 /* CONTACT SECTION */
 .contact-section {
-    padding: 60px 0;
+    padding: 40px 0;
     margin-top: 8rem;
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .section-header h3 {
-    font-size: 5rem;
+    font-size: 3rem;
     font-weight: 700;
     margin-bottom: 15px;
     background-image: linear-gradient(rgb(133, 133, 133), rgb(255, 255, 255));
@@ -405,8 +386,9 @@ main h2 {
 
 .section-header p {
     color: lightgray;
-    max-width: 600px;
+    max-width: 100%;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 /* CONTACT GRID */
@@ -414,6 +396,7 @@ main h2 {
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
+    padding: 0 1rem;
 }
 
 .info-card {
@@ -422,36 +405,35 @@ main h2 {
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
+    padding: 20px;
 }
 
 .info-card:hover {
     transform: translateY(-5px);
 }
 
-.info-card {
-    padding: 30px;
-}
-
 .info-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 4rem;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
     color: lightgray;
 }
 
 .contact-item {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .contact-item p {
     font-weight: 600;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
     color: #7ce9e6;
+    font-size: 0.9rem;
 }
 
 .contact-item a {
     color: lightgray;
     text-decoration: none;
     transition: color 0.3s;
+    font-size: 0.9rem;
 }
 
 .contact-item a:hover {
@@ -459,26 +441,29 @@ main h2 {
 }
 
 .social-link {
-    margin-top: 30px;
-    padding-top: 20px;
+    margin-top: 20px;
+    padding-top: 15px;
     border-top: 1px solid #333;
 }
 
 .social-link p {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     color: #7ce9e6;
     font-weight: 600;
+    font-size: 0.9rem;
 }
 
 .social-link a {
     display: inline-block;
-    margin-right: 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
     color: lightgray;
     text-decoration: none;
-    padding: 8px 15px;
+    padding: 6px 12px;
     background-color: #2d2d2d;
     border-radius: 6px;
     transition: all 0.2s;
+    font-size: 0.8rem;
 }
 
 .social-link a:hover {
@@ -486,79 +471,29 @@ main h2 {
     color: lightgray;
 }
 
-
-/* FORM STYLE */
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-control {
-    width: 100%;
-    padding: 12px 15px;
-    background-color: #2d2d2d;
-    border-radius: 8px;
-    color: lightgray;
-    font-size: 16px;
-    transition: border-color 0.3s;
-    border: 1px solid #333;
-}
-
-.form-control:focus {
-    outline: none;
-    color: #7ce9e6;
-}
-
-textarea.form-control {
-    min-height: 120px;
-    resize: vertical;
-}
-
-.message-btn {
-    width: 100%;
-    padding: 12px;
-    background-color: rgba(124, 233, 230, 0.1);
-    color: #7ce9e6;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.message-btn:hover {
-    background-color: #7ce9e6;
-    color: #131314;
-}
-
-.success-message {
-    background-color: rgba(16, 185, 129, 0.2);
-    color: #10b981;
-    padding: 12px;
-    border-radius: 8px;
-    margin-top: 20px;
-    display: none;
-}
-
 footer {
     display: flex;
     justify-content: space-between;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    padding: 2rem 4rem;
+    align-items: center;
+    padding: 1.5rem;
     background-color: rgba(124, 233, 230, 0.1);
+    flex-wrap: wrap;
+}
+
+footer h3 {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
 }
 
 .box-icons {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .box-icons a {
     color: lightgray;
-    font-size: 2rem;
+    font-size: 1.5rem;
     transition: color 0.5s;
 }
 
@@ -566,10 +501,7 @@ footer {
     color: #7ce9e6;
 }
 
-
-
-
-
+/* SKILLS CARDS SECTION */
 .projects-sectionx {
     width: 100%;
     margin-top: 5rem;
@@ -580,34 +512,34 @@ footer {
     justify-content: center;
 }
 
-
 .wrapperx {
     width: 100%;
-    height: 60vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 1rem;
 }
 
 .containerx {
-    height: 360px;
+    height: 300px;
     display: flex;
     flex-wrap: nowrap;
     justify-content: start;
 }
 
 .cardx {
-    width: 100px;
+    width: 80px;
     border-radius: .75rem;
     background-size: cover;
     cursor: pointer;
     overflow: hidden;
-    border-radius: 2rem;
-    margin: 0 10px;
+    border-radius: 1rem;
+    margin: 0 5px;
     display: flex;
     align-items: flex-end;
     transition: .6s cubic-bezier(.28,-0.03,0,.99);
-    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
+    box-shadow: 0px 5px 15px -3px rgba(0,0,0,0.8);
 }
 
 .cardx > .rowx {
@@ -620,11 +552,12 @@ footer {
     background: #223;
     color: white;
     border-radius: 50%;
-    width: 50px;
+    width: 40px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 15px;
+    margin: 10px;
 }
 
 .cardx > .rowx > .descriptionx {
@@ -632,8 +565,8 @@ footer {
     justify-content: center;
     flex-direction: column;
     overflow: hidden;
-    height: 80px;
-    width: 520px;
+    height: 60px;
+    width: 0;
     opacity: 0;
     transform: translateY(30px);
     transition-delay: .3s;
@@ -642,11 +575,13 @@ footer {
 
 .descriptionx p {
     color: #b0b0ba;
-    padding-top: 5px;
+    padding-top: 3px;
+    font-size: 0.8rem;
 }
 
 .descriptionx h4 {
     text-transform: uppercase;
+    font-size: 0.9rem;
 }
 
 input {
@@ -654,12 +589,13 @@ input {
 }
 
 input:checked + label {
-    width: 600px;
+    width: 300px;
 }
 
 input:checked + label .descriptionx {
     opacity: 1 !important;
     transform: translateY(0) !important;
+    width: 200px;
 }
 
 .cardx[for="c1"] {
@@ -669,200 +605,225 @@ input:checked + label .descriptionx {
     background-image: url('images/img2.png');
 }
 .cardx[for="c3"] {
-    background-image: url('images/img3.jpg');
+    background-image: url('images/img3.png');
 }
 .cardx[for="c4"] {
-    background-image: url('images/img4.jpg');
+    background-image: url('images/img4.png');
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 1400px) {
-    main h1 {
-        font-size: 6.3rem;
-        letter-spacing: 0;
+/* MEDIA QUERIES */
+@media (min-width: 576px) {
+    body {
+        padding: 2rem;
     }
-
-
-
-    .bento-grid {
-        position: relative;
-        display: grid;
-        height: 80vh;
-        width: 100%;
-        grid-template-columns: auto auto;
-        grid-template-areas: 
-        "intro  tech"
-        "time passion " ;
     
+    .logo {
+        font-size: 1.3rem;
     }
-
-    .intro { grid-area: intro; min-height: 200px; min-width:300px ;}
-    .tech {grid-area: tech; height: 700px; min-width:250px ;}
-    .time { grid-area: time; min-height: 220px; min-width: 250px;}
-    .passion { grid-area: passion; min-height: 220px; min-width: 250px; }
-
-    .card-title {
-        font-size: 1.2rem;
-        margin-top: 0;
+    
+    main h1 {
+        font-size: 5.5rem;
     }
-
-    .card-text {
-        line-height: 1.3;
-        font-size: 0.8rem;
+    
+    .bio {
+        font-size: 1rem;
+        max-width: 22rem;
     }
-
-    .model-box {
-        right: 10%;
-        top: 18%;
+    
+    .about-title, .projects-section h3, .section-header h3 {
+        font-size: 3.5rem;
     }
-
-    .intro {min-height: 700px;}
-    .time {grid-area: time; min-height: 300px;}
-
-    .projects-section {
-        margin-top: 40rem;
+    
+    .slider {
+        height: 350px;
     }
-
+    
     .slider .list .item {
-        width: 40rem;
-        height: 20rem;
+        width: 350px;
+        height: 250px;
     }
-
+    
     .slider .list {
-        min-width: calc(30rem * var(--quantity));
+        min-width: calc(350px * 4);
+    }
+    
+    .cardx {
+        width: 100px;
+    }
+    
+    input:checked + label {
+        width: 400px;
     }
 }
 
+@media (min-width: 768px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "intro tech"
+            "time passion";
+    }
+    
+    .model-box {
+        height: 250px;
+    }
+    
+    .card-title {
+        font-size: 1.4rem;
+    }
+    
+    .card-text {
+        font-size: 1rem;
+    }
+    
+    .slider {
+        height: 400px;
+    }
+    
+    .slider .list .item {
+        width: 400px;
+        height: 300px;
+    }
+    
+    .slider .list {
+        min-width: calc(400px * 4);
+    }
+    
+    .cardx {
+        width: 120px;
+    }
+    
+    input:checked + label {
+        width: 500px;
+    }
+}
+
+@media (min-width: 992px) {
+    body {
+        padding: 3rem;
+    }
+    
+    main h1 {
+        font-size: 7rem;
+    }
+    
+    .about-title, .projects-section h3, .section-header h3 {
+        font-size: 4rem;
+    }
+    
+    .bento-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+            "intro intro tech"
+            "time passion tech";
+    }
+    
+    .model-box {
+        position: absolute;
+        right: 5%;
+        top: -30%;
+        width: 30rem;
+        height: 30rem;
+    }
+    
+    .info-3D {
+        width: 120%;
+        height: 120%;
+    }
+    
+    .bento-grid .skills-group {
+        position: absolute;
+        bottom: 5%;
+        left: 15%;
+        width: 70%;
+    }
+    
+    .slider {
+        height: 500px;
+    }
+    
+    .slider .list .item {
+        width: 500px;
+        height: 350px;
+    }
+    
+    .slider .list {
+        min-width: calc(500px * 4);
+    }
+    
+    .cardx {
+        width: 150px;
+    }
+    
+    input:checked + label {
+        width: 600px;
+    }
+}
+
+@media (min-width: 1200px) {
+    main h1 {
+        font-size: 9rem;
+    }
+    
+    .about-title, .projects-section h3, .section-header h3 {
+        font-size: 5rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .slider {
+        height: 600px;
+    }
+    
+    .slider .list .item {
+        width: 600px;
+        height: 400px;
+    }
+    
+    .slider .list {
+        min-width: calc(600px * 4);
+    }
+}
 
 @media (max-width: 480px) {
     main h1 {
         display: none;
     }
-
+    
     main h2 {
         display: block;
-        margin-top: -3rem;
+        margin-top: -1rem;
     }
-
-    .bio-section {
-        margin-bottom: 1rem;
+    
+    .planet-3D {
+        top: 0;
+        right: -50%;
+        width: 180%;
+        height: 180%;
     }
-
-    .bio {
-        font-size: 0.8rem;
-        max-width: 15rem;
-    }
-
-    .bento-grid {
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-            "intro"
-            "tech"
-            "time"
-            "passion"
-        ;
-    }
-
-    .about-title {
-        margin-bottom: 5%;
-        font-size: 3rem;
-    }
-
+    
     .model-box {
-        right: -4%;
-        top: 27%;
-        scale: 0.7;
+        height: 150px;
     }
-
+    
     .projects-section {
-        margin-top: 100rem;
+        margin-top: 8rem;
     }
-
-    .projects-section h3 {
-        margin-bottom: 5%;
-        font-size: 3rem;
-    }
-
+    
     .slider .list .item {
-        width: 20rem;
-        height: 10rem;
+        width: 250px;
+        height: 180px;
     }
-
+    
     .slider .list {
-        display: flex;
-        min-width: calc( 10rem * var(--quantity));
+        min-width: calc(250px * 4);
     }
-
-    .section-header h3 {
-        font-size: 3rem;
-    }
-
-    .contact-section {
-        margin-top: 0;
-    }
-
-    .box-icons {
-        display: none;
-    }
-
-    footer h3 {
-        font-size: 1rem;
-    }
-}
-
-
-@media (max-width: 380px) {
-    body {
-        padding: 1rem;
-    }
-
-    main h2 {
-        font-size: 6rem;
-    }
-
-    .logo {
-        font-size: 1.2rem;
-    }
-
-    .location p{
-        font-size: 1rem;
-    }
-
-    .contact-btn {
-        padding: 0.4rem 1.5rem;
-        font-size: 0.9rem;
-    }
-
-    .model-box {
-        right: 2%;
-        top: 27%;
-    }
-
-    footer h3 {
-        font-size: 0.8rem;
+    
+    input:checked + label {
+        width: 250px;
     }
 }
